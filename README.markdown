@@ -5,6 +5,7 @@ This plugin contains 2 function:
 ### jQuery.geoSupport
 Return true if your browser have GEO API support, false if not.
 Example:
+
 <code>
 $('#checkSupport').click(function () {
   if ($.geoSupport()) {
@@ -24,6 +25,7 @@ Using this function with two parameter: <code>jQuery.geo(successCallback, errorC
 Example:
 
 - with only one parameter:
+
 <code>
 $('#getGeoLocation').click(function () {
   $.geo(function (latitude, longitude) {
@@ -32,6 +34,7 @@ $('#getGeoLocation').click(function () {
 });
 </code>
 - with two parameter, first parameter is function has been define:
+
 <code>
 function callback (latitude, longitude) {
   setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
