@@ -6,7 +6,7 @@ This plugin contains 2 function:
 Return true if your browser have GEO API support, false if not.
 Example:
 
-<code>
+<pre>
 $('#checkSupport').click(function () {
   if ($.geoSupport()) {
     setMessage('You browser have GEO API');
@@ -14,10 +14,10 @@ $('#checkSupport').click(function () {
     setMessage('You browser don\'t have GEO API');
   }
 });
-</code>
+</pre>
 
 ### jQuery.geo
-Using this function with two parameter: <code>jQuery.geo(successCallback, errorCallback)</code>
+Using this function with two parameter: <pre>jQuery.geo(successCallback, errorCallback)</pre>
 
 - first parameter is successCallback: If your browser have GEO API support, **jQuery.geo** will call this function with two arguments: latitude and longitude of your position
 - second parameter is optional, if have and when GEO API call have error, **jQuery.geo** will call this function with one arguments: error return from GEO API
@@ -26,16 +26,16 @@ Example:
 
 - with only one parameter:
 
-<code>
+<pre>
 $('#getGeoLocation').click(function () {
   $.geo(function (latitude, longitude) {
     setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
   });
 });
-</code>
+</pre>
 - with two parameter, first parameter is function has been define:
 
-<code>
+<pre>
 function callback (latitude, longitude) {
   setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
 }
@@ -45,7 +45,7 @@ $('#getGeoLocationError').click(function () {
     setMessage(error.toString());
   });
 });
-</code>
+</pre>
 
 
 See more at: http://apps.sanglt.com/jgeo/
