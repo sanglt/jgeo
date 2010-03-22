@@ -17,7 +17,7 @@ $('#checkSupport').click(function () {
 </pre>
 
 ### jQuery.geo
-Using this function with two parameter: <pre>jQuery.geo(successCallback, errorCallback)</pre>
+Using this function with two parameter: <code>jQuery.geo(successCallback, errorCallback)</code>
 
 - first parameter is successCallback: If your browser have GEO API support, **jQuery.geo** will call this function with two arguments: latitude and longitude of your position
 - second parameter is optional, if have and when GEO API call have error, **jQuery.geo** will call this function with one arguments: error return from GEO API
@@ -48,4 +48,4 @@ $('#getGeoLocationError').click(function () {
 </pre>
 
 
-See more at: http://apps.sanglt.com/jgeo/
+See more at: [http://apps.sanglt.com/jgeo/](http://apps.sanglt.com/jgeo/)
