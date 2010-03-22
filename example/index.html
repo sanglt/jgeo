@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>jQuery Geo Plugin Examples</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="../jquery.geo.js"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+      jQuery(function ($) {
+        function setMessage(message) {
+          $('#result').html(message);
+        }
+        
+        $('#checkSupport').click(function () {
+          if ($.geoSupport()) {
+            setMessage('You browser have GEO API');
+          } else {
+            setMessage('You browser don\'t have GEO API');
+          }
+        });
+        
+        $('#getGeoLocation').click(function () {
+          $.geo(function (latitude, longitude) {
+            setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
+          });
+        });
+        
+        $('#getGeoLocationError').click(function () {
+          $.geo(function (latitude, longitude) {
+            setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
+          }, function (error) {
+            setMessage(error.toString());
+          });
+        });
+      });
+    //--><!]]>
+  </script>
+</head>
+<p id="result"></p>
+<div>
+  <button id="checkSupport">Check Browser API support</button>
+  <button id="getGeoLocation">Get Geo Location</button>
+  <button id="getGeoLocationError">Get Geo Location With Error Handler</button>
+</div>
+</html>
