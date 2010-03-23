@@ -12,6 +12,11 @@
           $('#result').html(message);
         }
         
+        function createImage(latitude, longtitude) {
+          var src = "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longtitude + "&zoom=16&size=512x512&maptype=roadmap&mobile=true&markers=color:red|label:Y|" + latitude + "," + longtitude + "&sensor=false";
+          $('<img />').attr('src', src).appendTo($('#result'));
+        }
+        
         $('#checkSupport').click(function () {
           if ($.geoSupport()) {
             setMessage('You browser have GEO API');
@@ -21,14 +26,10 @@
         });
         
         $('#getGeoLocation').click(function () {
+          setMessage('');
           $.geo(function (latitude, longitude) {
             setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
-          });
-        });
-        
-        $('#getGeoLocationError').click(function () {
-          $.geo(function (latitude, longitude) {
-            setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
+            createImage(latitude, longitude);
           }, function (error) {
             setMessage(error.toString());
           });
@@ -41,6 +42,5 @@
 <div>
   <button id="checkSupport">Check Browser API support</button>
   <button id="getGeoLocation">Get Geo Location</button>
-  <button id="getGeoLocationError">Get Geo Location With Error Handler</button>
 </div>
 </html>
