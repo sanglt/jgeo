@@ -21,9 +21,6 @@ var bb = {
     observer.update(blackberry.location.latitude, blackberry.location.longitude);
   }
 };
-function positionSucceeded(location) {
-  alert(location);
-}
 /**
  * Handler geo for nokia, iphone, android and browser have geo api
  */

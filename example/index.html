@@ -13,7 +13,7 @@
         }
         
         function createImage(latitude, longtitude) {
-          var src = "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longtitude + "&zoom=16&size=512x512&maptype=roadmap&mobile=true&markers=color:red|label:Y|" + latitude + "," + longtitude + "&sensor=false";
+          var src = "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longtitude + "&zoom=16&size=400x400&maptype=roadmap&mobile=true&markers=color:red|label:Y|" + latitude + "," + longtitude + "&sensor=false";
           $('<img />').attr('src', src).appendTo($('#result'));
         }
         
