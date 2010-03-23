@@ -40,7 +40,6 @@ var geo = {
     );
   },
   positionSucceeded: function (position) {
-    alert(position);
     observer.update(position.coords.latitude, position.coords.longitude);
   },
   positionFailed: function (error) {

@@ -28,7 +28,7 @@
         $('#getGeoLocation').click(function () {
           setMessage('');
           $.geo(function (latitude, longitude) {
-            setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude);
+            setMessage('Your latitude position: ' + latitude + '<br />and longitude position: ' + longitude + '<br />');
             createImage(latitude, longitude);
           }, function (error) {
             setMessage(error.toString());
